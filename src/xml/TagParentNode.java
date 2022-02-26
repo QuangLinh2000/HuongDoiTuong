@@ -39,17 +39,23 @@ public class TagParentNode implements XMLComponent{
 		XMLLeaf xmlLeaf1 = new XMLLeaf("item", "Dog House");
      	xmlLeaf1.addActibute(new Actibute("number", "12660"));
      	xmlLeaf1.addActibute(new Actibute("quantity", "1"));
+		
      	
 		XMLLeaf xmlLeaf2 = new XMLLeaf("item", "Bird Feeder");
 		xmlLeaf2.addActibute(new Actibute("number", "12660"));
      	xmlLeaf2.addActibute(new Actibute("quantity", "2"));
+     	
+     	List<XMLComponent> liComponents3 = Arrays.asList(xmlLeaf1,xmlLeaf2);
+
+		TagParentNode xmlLeafC13 = new TagParentNode("Order", liComponents3);
+
         
-     	List<XMLComponent> liComponents = Arrays.asList(xmlLeaf1,xmlLeaf2);
+     	List<XMLComponent> liComponents = Arrays.asList(xmlLeafC13,xmlLeaf2);
 		
 		TagParentNode xmlLeafC1 = new TagParentNode("Order", liComponents);
 		TagParentNode xmlLeafC2 = new TagParentNode("Order", liComponents);
 		
-		  List<XMLComponent> listLeaf = Arrays.asList(xmlLeafC1,xmlLeafC2);
+		List<XMLComponent> listLeaf = Arrays.asList(xmlLeafC1,xmlLeafC2);
 		TagParentNode tagParentNode = new TagParentNode("Orders",listLeaf);
 		tagParentNode.generateHtml();
 	}

@@ -28,7 +28,7 @@ public class XMLLeaf implements XMLComponent {
 			Actibute actibute = listActibute.get(i);
 			actibuteS += actibute.getActibuteName() +" = "+"'"+actibute.getActibuteValue()+"'";
 		}
-		System.out.println("<"+tagName+ actibuteS+">"+ tagValue + "</"+tagName+">");
+		System.out.println("  <"+tagName+ actibuteS+">"+ tagValue + "</"+tagName+">");
 		
 	}
 
